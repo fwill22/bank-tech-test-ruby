@@ -1,5 +1,8 @@
 source "https://rubygems.org"
 
-gem "rspec"
-gem "simplecov"
-gem "rubocop"
+group :development, :test do
+  gem "rspec"
+  gem "rubocop"
+  gem "simplecov"
+  gem "simplecov-console"
+end
