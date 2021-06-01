@@ -20,3 +20,4 @@ Other:
 - Build passing (travis/circle CI)
 - Test coverage (auto generated)
 - Code style and code conventions (linting)
+- code climate
