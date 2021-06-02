@@ -61,7 +61,7 @@ I want my account to prevent withdrawal if I have insufficient funds
 
 As a bank manager
 So I can ensure the efficient operation of my business
-I want to be able to notify customers if they are depositing or withdrawing amounts less than £0. 
+I want to be able to notify customers if they are depositing or withdrawing amounts ≤ £0. 
 ```
 
 ### Acceptance Criteria

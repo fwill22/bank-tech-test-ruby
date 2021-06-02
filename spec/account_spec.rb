@@ -10,6 +10,10 @@ RSpec.describe Account do
   describe '#deposit' do
     let(:transaction) { double(:transaction, credit: 250, debit: 0, updated_balance: 250) }
 
+    it 'raises an error if amount entered is ≤ 0' do
+      expect { subject.deposit(0) }.to raise_error 'Error: please enter valid amount'
+    end
+
     it 'increases the current balance by the given transaction amount' do
       expect { subject.deposit(250) }.to change { subject.balance }.from(0).to(250)
     end
@@ -31,6 +35,10 @@ RSpec.describe Account do
 
     it 'raises an error if overdraft limit is exceeded' do
       expect { subject.withdraw(360) }.to raise_error 'Insufficient funds: overdraft limit exceeded'
+    end
+
+    it 'raises an error if amount entered is ≤ 0' do
+      expect { subject.withdraw(0) }.to raise_error 'Error: please enter valid amount'
     end
 
     it 'decreases the current balance by the given transaction amount' do

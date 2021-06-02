@@ -14,11 +14,14 @@ class Account
   end
 
   def deposit(amount)
+    raise 'Error: please enter valid amount' if amount <= 0
+
     @balance += amount
     authorise(credit_transaction(amount))
   end
 
   def withdraw(amount)
+    raise 'Error: please enter valid amount' if amount <= 0
     raise 'Insufficient funds: overdraft limit exceeded' if overdrawn?(amount)
 
     @balance -= amount
