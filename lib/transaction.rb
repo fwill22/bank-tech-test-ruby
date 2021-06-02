@@ -2,7 +2,6 @@ require 'date'
 require_relative 'account'
 
 class Transaction
-
   attr_reader :date
   attr_accessor :credit, :debit, :updated_balance
 
@@ -16,5 +15,4 @@ class Transaction
   def self.create(credit, debit, updated_balance)
     Transaction.new(credit, debit, updated_balance)
   end
-
 end

@@ -8,8 +8,7 @@ RSpec.describe Account do
   end
 
   describe '#deposit' do
-    let(:subject) { described_class.new }
-    let(:transaction) { double(:transaction, :credit => 250, :debit => 0, :updated_balance => 250) }
+    let(:transaction) { double(:transaction, credit: 250, debit: 0, updated_balance: 250) }
 
     it 'increases the current balance by the given transaction amount' do
       expect { subject.deposit(250) }.to change { subject.balance }.from(0).to(250)
@@ -24,17 +23,25 @@ RSpec.describe Account do
   end
 
   describe '#withdraw' do
-    #stub test so unaffected by deposit method (isolate)?
+    let(:transaction) { double(:transaction, credit: 0, debit: 200, updated_balance: 0) }
+    # test is testing double not method
     before(:each) do
       subject.deposit(200)
+    end
+
+    it 'raises an error if overdraft limit is exceeded' do
+      expect { subject.withdraw(360) }.to raise_error 'Insufficient funds: overdraft limit exceeded'
     end
 
     it 'decreases the current balance by the given transaction amount' do
       expect { subject.withdraw(200) }.to change { subject.balance }.from(200).to(0)
     end
 
-    it 'raises an error if overdraft limit is exceeded' do
-      expect { subject.withdraw(360) }.to raise_error "Insufficient funds: overdraft limit exceeded"
+    it 'stores the given amount as debit in a Transaction object' do #[FIX THIS TEST]
+      subject.withdraw(200)
+
+      expect(transaction.credit).to eq 0
+      expect(transaction.debit).to eq 200
     end
   end
 
@@ -42,11 +49,11 @@ RSpec.describe Account do
     it 'is empty when initialized' do
       expect(subject.transaction_history).to be_empty
     end
-    
+
     it 'stores all transaction objects in an array' do
-      # deposit_transaction = double(:transaction, :credit => 250, :credit => 0, :updated_balance => 250)
 
       expect { subject.deposit(250) }.to change { subject.transaction_history.length }.by 1
+      expect { subject.withdraw(200) }.to change { subject.transaction_history.length }.by 1
     end
   end
 end

@@ -26,7 +26,7 @@ RSpec.describe Transaction do
       expect(deposit.debit).to eq 0
     end
   end
-  
+
   describe 'updated_balance' do
     it 'can store the balance after transaction is added' do
       expect(deposit.updated_balance).to eq 250
