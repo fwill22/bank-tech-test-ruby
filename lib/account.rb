@@ -1,11 +1,15 @@
 class Account
-  attr_reader :balance, :overdraft_limit
 
-  
+  ::OVERDRAFT_LIMIT = -150
+  ::OPENING_BALANCE = 0
 
-  def initialize
-    @balance = 0
-    @overdraft_limit = -150
+  attr_accessor :balance, :transaction_history
+  attr_reader :overdraft_limit
+
+  def initialize(balance = OPENING_BALANCE, overdraft_limit = OVERDRAFT_LIMIT)
+    @balance = balance
+    @overdraft_limit = overdraft_limit
+    @transaction_history = []
   end
 
   def deposit(amount)

@@ -1,3 +1,4 @@
+## Template
 Overview: 
  - description and intent of the project
    - what its for what I did. 
@@ -21,3 +22,57 @@ Other:
 - Test coverage (auto generated)
 - Code style and code conventions (linting)
 - code climate
+
+
+
+
+### User Stories
+```
+As a user
+So I can be part of a cashless economy
+I want to be able to open an empty bank account
+
+As a user
+So I can store my money securely
+I want to be able to deposit it into my account
+
+As a user
+So I can buy things untracked 
+I want to be able to withdraw money from my account
+
+As a user
+So I can check how much money I have saved
+I want to be able to see my current account balance and transaction history on a printed statement.
+
+As a user
+So I can keep on top of my money habits
+I want my account statement to display the date, transaction amount, type, and updated balance.
+
+As a user
+So I can see an up to date history of my transactions
+I want to be able to see my account statement listed in reverse chronology by date created
+```
+
+#### Edge cases:
+```
+As a user
+So I can stay in the black
+I want my account to prevent withdrawal if I have insufficient funds
+
+As a bank manager
+So I can ensure the efficient operation of my business
+I want to be able to notify customers if they are depositing or withdrawing amounts less than £0. 
+```
+
+### Acceptance Criteria
+Given a client makes a deposit of 1000 on 10-01-2012<br>
+And a deposit of 2000 on 13-01-2012 <br>
+And a withdrawal of 500 on 14-01-2012 <br>
+When she prints her bank statement she would see:
+```
+|    date     ||  credit  ||  debit  || balance  |
+ ------------------------------------------------
+|  14/01/2012 ||          || 500.00  || 2500.00  |
+|  13/01/2012 || 2000.00  ||         || 3000.00  |
+|  10/01/2012 || 1000.00  ||         || 1000.00  |
+```

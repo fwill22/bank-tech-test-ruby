@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'account'
 
 RSpec.describe Account do
@@ -10,8 +8,15 @@ RSpec.describe Account do
   end
 
   describe '#deposit' do
+
+    let(:transaction) { double(:transaction) }
+    
     it 'increases the current balance by the given transaction amount' do
       expect { subject.deposit(250) }.to change { subject.balance }.from(0).to(250)
+    end
+
+    it 'stores the given amount as credit in a Transaction object' do
+      
     end
   end
 
