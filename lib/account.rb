@@ -1,8 +1,11 @@
 class Account
-  attr_reader :balance
+  attr_reader :balance, :overdraft_limit
+
+  
 
   def initialize
     @balance = 0
+    @overdraft_limit = -150
   end
 
   def deposit(amount)
@@ -10,6 +13,7 @@ class Account
   end
 
   def withdraw(amount)
+    raise "Insufficient funds: overdraft limit exceeded" if @balance - amount < @overdraft_limit
     @balance -= amount
   end
 end

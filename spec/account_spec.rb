@@ -25,7 +25,7 @@ RSpec.describe Account do
     end
 
     it 'raises an error if overdraft limit is exceeded' do
-      expect(subject.withdraw(350)).to raise_error "Insufficient funds: overdraft limit exceeded"
+      expect { subject.withdraw(360) }.to raise_error "Insufficient funds: overdraft limit exceeded"
     end
   end
 end
