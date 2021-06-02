@@ -20,25 +20,26 @@ class Account
 
   def withdraw(amount)
     raise 'Insufficient funds: overdraft limit exceeded' if overdrawn?(amount)
+
     @balance -= amount
     authorise(debit_transaction(amount))
   end
 
   private
 
-    def credit_transaction(amount, transaction = Transaction)
-      @transaction = transaction.create(amount, 0, @balance)
-    end
+  def credit_transaction(amount, transaction = Transaction)
+    @transaction = transaction.create(amount, 0, @balance)
+  end
 
-    def debit_transaction(amount, transaction = Transaction)
-      @transaction = transaction.create(0, amount, @balance)
-    end
+  def debit_transaction(amount, transaction = Transaction)
+    @transaction = transaction.create(0, amount, @balance)
+  end
 
-    def authorise(_transaction)
-      @transaction_history << transaction
-    end
+  def authorise(_transaction)
+    @transaction_history << transaction
+  end
 
-    def overdrawn?(amount)
-      @balance - amount < @overdraft_limit
-    end
+  def overdrawn?(amount)
+    @balance - amount < @overdraft_limit
+  end
 end

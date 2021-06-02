@@ -37,7 +37,7 @@ RSpec.describe Account do
       expect { subject.withdraw(200) }.to change { subject.balance }.from(200).to(0)
     end
 
-    it 'stores the given amount as debit in a Transaction object' do #[FIX THIS TEST]
+    it 'stores the given amount as debit in a Transaction object' do # [FIX THIS TEST]
       subject.withdraw(200)
 
       expect(transaction.credit).to eq 0
@@ -51,7 +51,6 @@ RSpec.describe Account do
     end
 
     it 'stores all transaction objects in an array' do
-
       expect { subject.deposit(250) }.to change { subject.transaction_history.length }.by 1
       expect { subject.withdraw(200) }.to change { subject.transaction_history.length }.by 1
     end
