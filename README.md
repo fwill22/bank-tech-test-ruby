@@ -1,7 +1,5 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/72568956011e38881297/maintainability)](https://codeclimate.com/github/fwill22/bank-tech-test-ruby/maintainability)
 
-[![Test Coverage](https://api.codeclimate.com/v1/badges/72568956011e38881297/test_coverage)](https://codeclimate.com/github/fwill22/bank-tech-test-ruby/test_coverage)
-
 ## Template
 <details>
 Overview: 
@@ -31,7 +29,7 @@ Other:
 </details>
 
 ## Overview
-(to be added) Solo project to solve a technical challenge with a focus on clean well crafted code. 
+Solo project to solve a technical challenge with a focus on clean well crafted code. 
 Program allows user to manage finances through a simple command line interface. 
 ## Setup 
 ```
@@ -62,7 +60,7 @@ Results: (to be added)
 ```
 rubocop
 ```
-Results: (to be added)
+Results: 0 offenses - (to be added)
 <p>&nbsp;</p>
 
 ## Planning and Approach: 
