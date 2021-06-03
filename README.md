@@ -27,7 +27,8 @@ Other:
 </details>
 
 ## Overview
-(to be added)
+(to be added) Solo project to solve a technical challenge with a focus on clean well crafted code. 
+Program allows user to manage finances through a simple command line interface. 
 ## Setup 
 ```
 $ git clone git@github.com:fwill22/bank-tech-test-ruby.git
