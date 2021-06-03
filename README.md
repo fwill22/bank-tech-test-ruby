@@ -1,3 +1,7 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/72568956011e38881297/maintainability)](https://codeclimate.com/github/fwill22/bank-tech-test-ruby/maintainability)
+
+[![Test Coverage](https://api.codeclimate.com/v1/badges/72568956011e38881297/test_coverage)](https://codeclimate.com/github/fwill22/bank-tech-test-ruby/test_coverage)
+
 ## Template
 <details>
 Overview: 
