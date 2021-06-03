@@ -30,7 +30,7 @@ RSpec.describe Account do
 
   describe '#withdraw' do
     let(:transaction) { double(:transaction, credit: 0, debit: 200, updated_balance: 0) }
-    # test is testing double not method
+    # test is testing double not method?
     before(:each) do
       subject.deposit(200)
     end
@@ -47,7 +47,7 @@ RSpec.describe Account do
       expect { subject.withdraw(200) }.to change { subject.balance }.from(200).to(0)
     end
 
-    it 'stores the given amount as debit in a Transaction object' do # [FIX THIS TEST]
+    it 'stores the given amount as debit in a Transaction object' do
       subject.withdraw(200)
 
       expect(transaction.credit).to eq 0
