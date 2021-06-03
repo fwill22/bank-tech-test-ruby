@@ -2,7 +2,7 @@ require 'account'
 
 RSpec.describe Account do
   let(:subject) { described_class.new }
-  # let(:account) { described_class.new(statement) }
+  let(:account) { described_class.new(statement) }
   let(:statement) { double(:statement) }
 
   it 'has a default starting balance of £0' do
@@ -55,12 +55,12 @@ RSpec.describe Account do
     end
   end
   #   CANT FIX TEST
-  # describe '#print_statement' do
-  #   it 'prints the transaction history' do
-  #     expect(statement).to receive(:print)
-  #     account.transaction_history
-  #   end
-  # end
+  describe '#print_statement' do
+    it 'prints the transaction history' do
+      expect(statement).to receive(:print)
+      account.print_statement
+    end
+  end
 
   describe 'transaction history' do
     it 'is empty when initialized' do
