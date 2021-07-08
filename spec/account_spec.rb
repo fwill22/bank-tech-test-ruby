@@ -54,7 +54,7 @@ RSpec.describe Account do
       expect(transaction.debit).to eq 200
     end
   end
-  #   CANT FIX TEST
+  #   Broken TEST
   describe '#print_statement' do
     it 'prints the transaction history' do
       expect(statement).to receive(:print)

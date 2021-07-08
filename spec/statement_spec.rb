@@ -11,9 +11,9 @@ RSpec.describe Statement do
   it 'prints out the transaction history formatted and in reverse chronology' do
     expect { subject.print(transaction_history) }.to output(
       "|    date    ||  credit  ||  debit  || balance  |\n"\
-      "| #{Date.today.strftime('%d/%m/%Y')} ||  ---   || 500.00  || 2500.00  |\n"\
-      "| #{Date.today.strftime('%d/%m/%Y')} || 2000.00  ||  ---   || 3000.00  |\n"\
-      "| #{Date.today.strftime('%d/%m/%Y')} || 1000.00  ||  ---   || 1000.00  |\n \n\n"
+      "| #{Date.today.strftime('%d/%m/%Y')} ||        || 500.00  || 2500.00  |\n"\
+      "| #{Date.today.strftime('%d/%m/%Y')} || 2000.00  ||        || 3000.00  |\n"\
+      "| #{Date.today.strftime('%d/%m/%Y')} || 1000.00  ||        || 1000.00  |\n \n\n"
     ).to_stdout
   end
 end

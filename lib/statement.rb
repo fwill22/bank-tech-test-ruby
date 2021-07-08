@@ -28,7 +28,7 @@ class Statement
 
   def format_amount(amount)
     if amount.zero?
-      ' --- '
+      '     '
     else
       format('%.2f', amount)
     end
