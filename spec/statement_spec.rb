@@ -13,10 +13,9 @@ RSpec.describe Statement do
       "|    date    ||  credit  ||  debit  || balance  |\n"\
       "| #{Date.today.strftime('%d/%m/%Y')} ||        || 500.00  || 2500.00  |\n"\
       "| #{Date.today.strftime('%d/%m/%Y')} || 2000.00  ||        || 3000.00  |\n"\
-      "| #{Date.today.strftime('%d/%m/%Y')} || 1000.00  ||        || 1000.00  |\n \n\n"
+      "| #{Date.today.strftime('%d/%m/%Y')} || 1000.00  ||        || 1000.00  |\n"
     ).to_stdout
   end
 end
 
 #  Stub tests for Date.today
-#  error: final line is outputting extra \n\n - why?

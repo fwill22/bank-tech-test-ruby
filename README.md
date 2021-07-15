@@ -159,6 +159,12 @@ Knows about: <br>
 
 
 *Collaborators*: - 
+
+**CLASS**: <br>
+| *Responsibilities*:  | *Collaborators*: |
+-----------------------|------------------|
+|Knows about:          |                  |
+
     
  
 </details>

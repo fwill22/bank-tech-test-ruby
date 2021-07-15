@@ -2,17 +2,18 @@ require_relative 'transaction'
 require_relative 'statement'
 
 class Account
-  ::OVERDRAFT_LIMIT = -150
-  ::OPENING_BALANCE = 0
+  OVERDRAFT_LIMIT = -150
+  OPENING_BALANCE = 0
 
   attr_accessor :balance, :transaction_history, :transaction
   attr_reader :overdraft_limit, :statement
 
-  def initialize(balance = OPENING_BALANCE, overdraft_limit = OVERDRAFT_LIMIT, statement = Statement.new)
+  def initialize(balance = OPENING_BALANCE, overdraft_limit = OVERDRAFT_LIMIT, statement = Statement.new, transaction_class = Transaction)
     @balance = balance
     @overdraft_limit = overdraft_limit
     @transaction_history = []
     @statement = statement
+    @transaction_class = transaction_class
   end
 
   def deposit(amount)
@@ -36,12 +37,12 @@ class Account
 
   private
 
-  def credit_transaction(amount, transaction = Transaction)
-    @transaction = transaction.create(amount, 0, @balance)
+  def credit_transaction(amount)
+    @transaction = @transaction_class.create(amount, 0, @balance)
   end
 
-  def debit_transaction(amount, transaction = Transaction)
-    @transaction = transaction.create(0, amount, @balance)
+  def debit_transaction(amount)
+    @transaction = @transaction_class.create(0, amount, @balance)
   end
 
   def authorise(_transaction)
