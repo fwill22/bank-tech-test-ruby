@@ -174,3 +174,9 @@ Knows about: <br>
 * Rspec
 * Rubocop
 * Simplecov
+
+<br>
+--------------------
+## JavaScript Version
+I have also written this test in JS - you can find the repo [here](https://github.com/fwill22/bank-tech-test-JS).
+
